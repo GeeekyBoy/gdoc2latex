@@ -74,7 +74,7 @@ const mapToLatex = (tfs: TextFormatSelectors, addBibliographyEntry: AddEntryFn, 
 
     const id = elem.attributes.find(attr => attr.key == 'id')
 
-    if (elem.tagName == 'hr' && elem.attributes[0].key == 'style' && elem.attributes[0].value.includes('page-break-before:always')) {
+    if (elem.tagName == 'hr' && elem.attributes[0] && elem.attributes[0].key == 'style' && elem.attributes[0].value.includes('page-break-before:always')) {
         return '\\pagebreak';
     }
 
